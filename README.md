@@ -41,6 +41,7 @@ DeviceFileEvents
 | project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
 
 
+
 <img width="1075" height="634" alt="Screenshot 2025-12-25 at 3 24 12 PM" src="https://github.com/user-attachments/assets/54eb7eba-02ac-4c38-93f1-7e5f640ef0bc" />
 
 ---
@@ -60,7 +61,9 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
 
 
+
 <img width="900" height="432" alt="Screenshot 2025-12-25 at 3 32 53 PM" src="https://github.com/user-attachments/assets/ea53a85d-b16b-4232-97ff-cdb1c503b2a2" />
+
 
 ---
 
@@ -78,6 +81,7 @@ DeviceProcessEvents
 | order by Timestamp desc
 
 
+
 <img width="902" height="629" alt="Screenshot 2025-12-25 at 3 34 55 PM" src="https://github.com/user-attachments/assets/371d66c9-d38f-4bc4-afec-3d0b4525b74f" />
 
 ---
@@ -90,6 +94,7 @@ Searched for any indication the TOR browser was used to establish a connection u
 
 **Query used to locate events:**
 
+
 DeviceNetworkEvents  
 | where DeviceName == "antonis-mde"  
 | where InitiatingProcessAccountName != "system"  
@@ -97,6 +102,7 @@ DeviceNetworkEvents
 | where RemotePort in ("9001", "9030", "9040", "9050", "9051", "9150", "80", "443")  
 | project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessFolderPath 
 | order by Timestamp desc
+
 
 
 <img width="883" height="519" alt="Screenshot 2025-12-25 at 3 40 29 PM" src="https://github.com/user-attachments/assets/ba0dc4c7-2498-4d3e-b180-9f139c9452aa" />
