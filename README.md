@@ -28,7 +28,9 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "antonislab" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop. These events began at 2025-12-25T20:11:56.6320899Z.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "antonislab" downloaded a TOR installer, 
+did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` 
+on the desktop. These events began at 2025-12-25T20:11:56.6320899Z.
 
 
 **Query used to locate events:**
@@ -49,7 +51,9 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.3 (1)". Based on the logs returned, on Dec 25, 2025 at 02:58:36 PM, an employee on the "Antonis-MDE" device ran the file `tor-browser-windows-x86_64-portable-15.0.3 (1)` from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.3 (1)". Based on the logs returned, 
+on Dec 25, 2025 at 02:58:36 PM, an employee on the "Antonis-MDE" device ran the file `tor-browser-windows-x86_64-portable-15.0.3 (1)` 
+from their Downloads folder, using a command that triggered a silent installation.
 
 
 **Query used to locate event:**
