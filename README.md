@@ -28,9 +28,9 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "antonislab" downloaded a TOR installer, 
-did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` 
-on the desktop. These events began at 2025-12-25T20:11:56.6320899Z.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "antonislab" downloaded a TOR installer. 
+User did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` 
+on the desktop. These events began at 2025-12-2.5T20:11:56.6320899Z.
 
 
 **Query used to locate events:**
@@ -51,9 +51,9 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.3 (1)". Based on the logs returned, 
-on Dec 25, 2025 at 02:58:36 PM, an employee on the "Antonis-MDE" device ran the file `tor-browser-windows-x86_64-portable-15.0.3 (1)` 
-from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.3 (1)". 
+Based on the logs returned, on Dec 25, 2025 at 02:58:36 PM, an employee on the "Antonis-MDE" device ran the file 
+`tor-browser-windows-x86_64-portable-15.0.3 (1)` from their Downloads folder, using a command that triggered a silent installation.
 
 
 **Query used to locate event:**
@@ -74,7 +74,9 @@ DeviceProcessEvents
 
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
-Searched for any indication that user "antonislab" actually opened the TOR browser. There was evidence that they did open it on Dec 25, 2025 at 02:59:25 PM. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+Searched for any indication that user "antonislab" actually opened the TOR browser. 
+There was evidence that they did open it on Dec 25, 2025 at 02:59:25 PM. 
+There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
 
 **Query used to locate events:**
 
@@ -93,7 +95,11 @@ DeviceProcessEvents
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. On Dec 25, 2025 at 03:09:45 PM, an employee on the "Antonis-MDE" device successfully established a connection to the remote IP address 37.143.117.173 on port `9050`. The connection was initiated by the process `tor.exe`, located in the folder  'c:\users\antonislab\desktop\torbrowser\browser\torbrowser\tor\tor.exe' . There were a few other connections to sites over port `443` and `9150` as well.
+Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. 
+On Dec 25, 2025 at 03:09:45 PM, an employee on the "Antonis-MDE" device successfully established a connection to 
+remote IP address 37.143.117.173 on port `9050`. The connection was initiated by the process `tor.exe`, located in 
+the folder  'c:\users\antonislab\desktop\torbrowser\browser\torbrowser\tor\tor.exe' . There were a few other 
+connections to sites over port `443` and `9150` as well.
 
 
 **Query used to locate events:**
